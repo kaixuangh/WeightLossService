@@ -1,4 +1,4 @@
-package top.okeng.auth.entity;
+package top.okeng.entity;
 
 import javax.persistence.*;
 

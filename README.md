@@ -1,6 +1,6 @@
-# React Native 认证服务
+# WeightLossService
 
-一个基于 Spring Boot 的轻量级 JWT 认证微服务
+WeightLossService 后端服务，一个基于 Spring Boot 的轻量级 JWT 认证微服务
 
 ## 🚀 特性
 
@@ -33,30 +33,3 @@
    ```bash
    git clone https://github.com/your-username/react-native-auth-service.git
    cd react-native-auth-service
-   
-
-2. 接口文档
-
-```shell
-// 注册用户
-curl -X POST http://localhost:8080/api/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "ray",
-    "password": "123",
-    "email": "test@example.com"
-  }'
-// 登录
-curl -X POST http://localhost:8080/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "ray",
-    "password": "123"
-  }'
-
-// 请求Demo接口
-curl -X GET "http://localhost:8080/api/protected/hello" \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXkiLCJleHAiOjE3Njk2MzQ0NDYsImlhdCI6MTc2OTU5ODQ0Nn0.Oae7ORmChDVsea1R_u-Vbyg4xHvbChiUwaAVD47TeOI"
-
-
-```

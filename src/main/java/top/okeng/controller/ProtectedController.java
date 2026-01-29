@@ -1,4 +1,4 @@
-package top.okeng.auth.controller;
+package top.okeng.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;

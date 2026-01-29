@@ -1,4 +1,4 @@
-package top.okeng.auth.controller;
+package top.okeng.controller;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.okeng.auth.dto.AuthRequest;
-import top.okeng.auth.dto.AuthResponse;
-import top.okeng.auth.dto.UserRegistrationDto;
-import top.okeng.auth.entity.User;
+import top.okeng.dto.AuthRequest;
+import top.okeng.dto.AuthResponse;
+import top.okeng.dto.UserRegistrationDto;
+import top.okeng.entity.User;
 import top.okeng.auth.security.JwtUtil;
-import top.okeng.auth.services.UserService;
+import top.okeng.services.UserService;
 
 @RestController
 @RequestMapping("/api/auth")

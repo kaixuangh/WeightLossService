@@ -1,4 +1,4 @@
-package top.okeng.auth.dto;
+package top.okeng.dto;
 
 /**
  * @author ray

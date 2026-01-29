@@ -1,4 +1,4 @@
-package top.okeng.auth;
+package top.okeng;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

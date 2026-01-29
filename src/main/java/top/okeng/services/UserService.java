@@ -1,17 +1,20 @@
-package top.okeng.auth.services;
+package top.okeng.services;
 
 
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import top.okeng.auth.dto.UserRegistrationDto;
-import top.okeng.auth.entity.User;
-import top.okeng.auth.repository.UserRepository;
+import org.springframework.web.server.ResponseStatusException;
+import top.okeng.dto.UserRegistrationDto;
+import top.okeng.entity.User;
+import top.okeng.repository.UserRepository;
 
 /**
  * @author ray
  * @description
  * @since 2026/1/28
  */
+
 
 @Service
 public class UserService {
@@ -24,11 +27,14 @@ public class UserService {
     }
 
     public User registerUser(UserRegistrationDto registrationDto) {
+        // 检查用户名是否已存在
         if (userRepository.existsByUsername(registrationDto.getUsername())) {
-            throw new RuntimeException("Username already exists");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "用户名已存在");
         }
+
+        // 检查邮箱是否已存在
         if (userRepository.existsByEmail(registrationDto.getEmail())) {
-            throw new RuntimeException("Email already exists");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "邮箱已存在");
         }
 
         User user = new User();

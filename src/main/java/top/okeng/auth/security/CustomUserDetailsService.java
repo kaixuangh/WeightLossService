@@ -4,8 +4,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import top.okeng.auth.entity.User;
-import top.okeng.auth.repository.UserRepository;
+import top.okeng.entity.User;
+import top.okeng.repository.UserRepository;
 
 import java.util.Collections;
 
