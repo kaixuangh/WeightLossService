@@ -24,13 +24,11 @@ public class SOAProviderTemplate extends AbstractProviderTemplate {
      * @return RPCBaseResult 执行返回包装
      */
     public <T> RPCBaseResult<T> execute(Supplier<T> function, Function<Throwable, RPCBaseResult<T>> errorHandler) {
-        RPCBaseResult<T> result;
         try {
-            result = SOAProviderTemplate.getSuccess(function.get());
+            return SOAProviderTemplate.getSuccess(function.get());
         } catch (Throwable throwable) {
-            result = errorHandler.apply(throwable);
+            return errorHandler.apply(throwable);
         }
-        return msgHandle(result);
     }
 
     /**
@@ -43,14 +41,12 @@ public class SOAProviderTemplate extends AbstractProviderTemplate {
      */
 
     public <T> RPCBaseResult<T> executeWithoutResult(Supplier<T> function, Function<Throwable, RPCBaseResult<T>> errorHandler) {
-        RPCBaseResult<T> result;
         try {
             function.get();
-            result = SOAProviderTemplate.getSuccess(null);
+            return SOAProviderTemplate.getSuccess(null);
         } catch (Throwable throwable) {
-            result = errorHandler.apply(throwable);
+            return errorHandler.apply(throwable);
         }
-        return msgHandle(result);
     }
 
 

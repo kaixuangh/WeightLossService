@@ -352,33 +352,3 @@ Content-Type: application/json
 ### 体重存储
 
 所有体重数据在后端统一以 **kg** 为单位存储，客户端根据用户设置的 `weightUnit` 进行显示转换。
-
-
-
-
-
-## 已经实现接口文档
-
-```shell
-// 注册用户
-curl -X POST http://localhost:8080/api/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "ray",
-    "password": "123",
-    "email": "test@example.com"
-  }'
-// 登录
-curl -X POST http://localhost:8080/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "ray",
-    "password": "123"
-  }'
-
-// 请求Demo接口
-curl -X GET "http://localhost:8080/api/protected/hello" \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyYXkiLCJleHAiOjE3Njk2MzQ0NDYsImlhdCI6MTc2OTU5ODQ0Nn0.Oae7ORmChDVsea1R_u-Vbyg4xHvbChiUwaAVD47TeOI"
-
-
-```

@@ -9,10 +9,10 @@ import java.util.Objects;
  */
 public enum BaseError implements Error {
     /*** 系统异常 ***/
-    SUCCESS(1, "1", "svc.success"),
-    ILLEGAL_PARAMETER(100, "100", "svc.illegal_parameter"),
-    ILLEGAL_STATE(200, "200", "svc.illegal_state"),
-    SERVER_ERR(500, "500", "svc.sever_logic_err"),
+    SUCCESS(0, "0", "success"),
+    ILLEGAL_PARAMETER(100, "100", "illegal_parameter"),
+    ILLEGAL_STATE(200, "200", "illegal_state"),
+    SERVER_ERR(500, "500", "sever_logic_err"),
 
 
     /*** 业务异常 ***/

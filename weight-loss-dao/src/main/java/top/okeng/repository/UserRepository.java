@@ -1,5 +1,6 @@
 package top.okeng.repository;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.stereotype.Repository;
 import top.okeng.entity.User;
 import top.okeng.mapper.UserMapper;
@@ -20,13 +21,12 @@ public class UserRepository {
     }
 
     public Optional<User> findByUsername(String username) {
-//        User user = new User();
-//        user.setUsername(username);
-//        // 直接使用继承的 selectOne 方法
-//        return Optional.ofNullable(userMapper.selectOne(user));
-        return Optional.ofNullable(new User());
-    }
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("username", username);
 
+        // 直接使用继承的 selectOne 方法
+        return Optional.ofNullable(userMapper.selectOne(queryWrapper));
+    }
 
 
 }

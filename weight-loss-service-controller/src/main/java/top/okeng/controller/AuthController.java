@@ -37,7 +37,7 @@ public class AuthController extends SOAProviderTemplate {
     @PostMapping("/register")
     public RPCBaseResult<?> register(@RequestBody UserRegistrationDto registrationDto) {
         return execute(() -> {
-            return userService.registerUser(registrationDto.getUsername(), registrationDto.getPassword());
+            return userService.registerUser(registrationDto.getUsername(), registrationDto.getPassword(), registrationDto.getConfirmPassword());
         }, SOAProviderTemplate::getFail);
 
     }
