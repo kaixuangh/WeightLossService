@@ -12,7 +12,7 @@
         <module>weight-loss-service-bootstrap</module>
         <module>weight-loss-service-controller</module>
         <module>weight-loss-service-domain</module>
-        <module>weight-loss-dao</module>
+        <module>weight-loss-service-dao</module>
         <module>weight-loss-service-common</module>
     </modules>
 
