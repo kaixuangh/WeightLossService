@@ -45,4 +45,24 @@ public class UserService {
 
         return userRepository.insert(user) == 1 ? user : null;
     }
+
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username)
+                .orElseThrow(() -> BaseError.USER_NOT_EXISTS.getException());
+    }
+
+    public void changePassword(String username, String oldPassword, String newPassword) {
+        if (!StringUtils.hasLength(oldPassword) || !StringUtils.hasLength(newPassword)) {
+            throw BaseError.ILLEGAL_PARAMETER.getException();
+        }
+
+        User user = findByUsername(username);
+
+        if (!passwordEncoder.matches(oldPassword, user.getPassword())) {
+            throw BaseError.PASSWORD_ERROR.getException();
+        }
+
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.update(user);
+    }
 }
