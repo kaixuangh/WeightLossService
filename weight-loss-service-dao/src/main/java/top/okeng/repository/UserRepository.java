@@ -28,5 +28,7 @@ public class UserRepository {
         return Optional.ofNullable(userMapper.selectOne(queryWrapper));
     }
 
-
+    public int update(User user) {
+        return userMapper.updateById(user);
+    }
 }
